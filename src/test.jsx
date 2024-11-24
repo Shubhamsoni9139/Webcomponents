@@ -1,121 +1,129 @@
-import React, { useState } from "react";
-import { Check } from "lucide-react";
-
-const PricingCard = ({ tier, price, features }) => (
-  <div className="bg-zinc-950/70 backdrop-blur text-white border border-zinc-800 rounded-2xl w-full max-w-sm relative z-10 overflow-hidden">
-    {/* Header */}
-    <div className="p-6 border-b border-zinc-800">
-      <div className="text-sm text-zinc-400">{tier}</div>
-      <div className="text-3xl font-bold mt-1">{price}</div>
-    </div>
-
-    {/* Content */}
-    <div className="p-6 space-y-6">
-      <ul className="space-y-3">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-center space-x-3">
-            <Check className="h-4 w-4 text-green-500" />
-            <span className="text-sm text-zinc-400">{feature}</span>
-          </li>
-        ))}
-      </ul>
-
-      <button
-        className={`w-full py-2 px-4 rounded-lg font-medium transition-colors duration-200
-          ${
-            tier === "Standard Plan"
-              ? "bg-white text-black hover:bg-gray-200"
-              : "bg-zinc-800 text-white hover:bg-zinc-700"
-          }`}
-      >
-        Get Started
-      </button>
-    </div>
-  </div>
-);
-
-const ToggleSwitch = ({ checked, onChange }) => (
-  <label className="relative inline-flex items-center cursor-pointer">
-    <input
-      type="checkbox"
-      className="sr-only peer"
-      checked={checked}
-      onChange={onChange}
-    />
-    <div
-      className="w-11 h-6 bg-zinc-800 peer-focus:outline-none rounded-full peer 
-                    peer-checked:after:translate-x-full peer-checked:after:border-white 
-                    after:content-[''] after:absolute after:top-[2px] after:left-[2px] 
-                    after:bg-white after:rounded-full after:h-5 after:w-5 
-                    after:transition-all"
-    ></div>
-  </label>
-);
+import React, { useState, useEffect } from "react";
 
 const Test = () => {
-  const [billedYearly, setBilledYearly] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const pricingData = [
+  // Sample data array - can be any length
+  const users = [
     {
-      tier: "Free Plan",
-      price: "Free",
-      features: [
-        "Send up to 2 transfers per month",
-        "Basic transaction history",
-        "Email support",
-        "Limited currency support (USD, EUR, GBP)",
-        "Basic security features",
-      ],
+      id: 1,
+      name: "James Wilson",
+      role: "Software Engineer",
+      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
     },
     {
-      tier: "Standard Plan",
-      price: billedYearly ? "$99.99/y" : "$9.99/m",
-      features: [
-        "Unlimited transfers",
-        "Transaction history with export options",
-        "Priority email support",
-        "Expanded currency support",
-        "Advanced security features",
-      ],
+      id: 2,
+      name: "Michael Brooks",
+      role: "Product Manager",
+      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
     },
     {
-      tier: "Pro Plan",
-      price: billedYearly ? "$199.99/y" : "$19.99/m",
-      features: [
-        "Unlimited transfers with priority processing",
-        "Comprehensive transaction analytics",
-        "24/7 priority support",
-        "Full currency support",
-        "Enhanced security features",
-      ],
+      id: 3,
+      name: "Robert Chen",
+      role: "UX Designer",
+      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
     },
+    {
+      id: 4,
+      name: "Emily Parker",
+      role: "Marketing Lead",
+      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+    },
+    {
+      id: 5,
+      name: "Emily Parker",
+      role: "Marketing Lead",
+      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+    },
+    {
+      id: 6,
+      name: "Emily Parker",
+      role: "Marketing Lead",
+      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+    },
+    {
+      id: 7,
+      name: "Emily Parker",
+      role: "Marketing Lead",
+      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+    },
+    // Add more users as needed
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % users.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [users.length]);
+
+  // Calculate grid columns based on number of items
+  const getGridCols = (count) => {
+    if (count <= 1) return 1;
+    if (count <= 4) return 2;
+    if (count <= 9) return 3;
+    return 4; // Max 4 columns for larger sets
+  };
+
+  const gridCols = getGridCols(users.length);
+
   return (
-    <div className="min-h-screen bg-black p-8 relative overflow-hidden">
-      {/* Large background text */}
-      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
-        <h1 className="text-[20vw] font-bold text-white select-none">
-          Pricing
-        </h1>
+    <div className="w-full max-w-6xl mx-auto p-4">
+      <div
+        className="relative grid gap-2"
+        style={{
+          gridTemplateColumns: `repeat(${gridCols}, 1fr)`,
+          aspectRatio: "1/1",
+        }}
+      >
+        {users.map((user, index) => (
+          <div key={user.id} className="relative overflow-hidden bg-gray-900">
+            {/* Image Container */}
+            <div className="absolute inset-0">
+              <img
+                src={user.image}
+                alt={user.name}
+                className={`w-full h-full object-cover transition-all duration-500 ${
+                  activeIndex === index ? "grayscale-0 scale-105" : "grayscale"
+                }`}
+              />
+            </div>
+
+            {/* Overlay with user info */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent
+                transition-opacity duration-500 flex flex-col justify-end p-4
+                ${activeIndex === index ? "opacity-100" : "opacity-0"}`}
+            >
+              <h3 className="text-white font-semibold text-lg">{user.name}</h3>
+              <p className="text-white/80 text-sm">{user.role}</p>
+            </div>
+
+            {/* Selection Frame */}
+            {activeIndex === index && (
+              <div className="absolute inset-0 z-10">
+                {/* Animated corners */}
+                <div className="absolute top-0 left-0 w-[20%] h-[20%] border-t-4 border-l-4 border-blue-500" />
+                <div className="absolute top-0 right-0 w-[20%] h-[20%] border-t-4 border-r-4 border-blue-500" />
+                <div className="absolute bottom-0 left-0 w-[20%] h-[20%] border-b-4 border-l-4 border-blue-500" />
+                <div className="absolute bottom-0 right-0 w-[20%] h-[20%] border-b-4 border-r-4 border-blue-500" />
+
+                {/* Counter badge */}
+                <div className="absolute top-2 right-2 bg-blue-500 text-white text-sm px-2 py-1 rounded-full">
+                  {activeIndex + 1}/{users.length}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
 
-      <div className="max-w-6xl mx-auto relative">
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-40">
-          {pricingData.map((plan) => (
-            <PricingCard key={plan.tier} {...plan} />
-          ))}
-        </div>
-
-        {/* Billing toggle */}
-        <div className="flex items-center justify-center space-x-3 text-zinc-400 relative z-10 mt-6">
-          <span>Billed Yearly</span>
-          <ToggleSwitch
-            checked={billedYearly}
-            onChange={(e) => setBilledYearly(e.target.checked)}
-          />
-        </div>
+      {/* Progress bar */}
+      <div className="mt-4 h-1 bg-gray-200 rounded-full overflow-hidden">
+        <div
+          className="h-full bg-blue-500 transition-all duration-500"
+          style={{ width: `${((activeIndex + 1) / users.length) * 100}%` }}
+        />
       </div>
     </div>
   );

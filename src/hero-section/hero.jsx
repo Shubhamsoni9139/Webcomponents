@@ -4,6 +4,7 @@ import Herosecond from "./herosecond";
 import Herothird from "./herothird";
 import Herofourth from "./herofourth";
 import Herofive from "./herofive";
+import Herosix from "./Herosix";
 
 const HeroSection = () => {
   return (
@@ -13,6 +14,7 @@ const HeroSection = () => {
       <Herothird />
       <Herofourth />
       <Herofive />
+      <Herosix />
     </div>
   );
 };

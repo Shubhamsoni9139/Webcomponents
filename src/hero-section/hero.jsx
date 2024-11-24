@@ -3,6 +3,7 @@ import Herofirst from "./herofirst";
 import Herosecond from "./herosecond";
 import Herothird from "./herothird";
 import Herofourth from "./herofourth";
+import Herofive from "./herofive";
 
 const HeroSection = () => {
   return (
@@ -11,6 +12,7 @@ const HeroSection = () => {
       <Herosecond />
       <Herothird />
       <Herofourth />
+      <Herofive />
     </div>
   );
 };

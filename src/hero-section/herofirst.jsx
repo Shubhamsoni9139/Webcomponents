@@ -87,7 +87,7 @@ const PreviewSection = () => {
               <div className="w-full h-[500px] bg-gray-800 rounded-2xl overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img
-                    src="https://lh7-us.googleusercontent.com/iIS_pCALWqGScsc4M5t3IcZHcFbnSffzfRBXKGdywbzuDe6BwJmQsx72GYdc2KRLRUUPSbIFg98t3FEL_QWeAdiXpg0l1MQpb6FJOiZU0JNlaE1Jr8zDLeCsHl6qdkidePxxLRnFXJT3dMk3U_NuWNA"
+                    src=" https://cdn.dribbble.com/userupload/10949899/file/original-4cd010ebac2990256dc1fd54a4302990.png"
                     alt="Mobile app interface"
                     className="absolute inset-0 w-full h-full object-cover"
                   />

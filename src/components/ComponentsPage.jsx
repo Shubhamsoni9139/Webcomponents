@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const BlurEffect = () => {
   return (
@@ -51,7 +51,6 @@ const BlurEffect = () => {
   );
 };
 
-// Icons for technology logos
 const TechIcon = ({ type }) => {
   const iconClasses = "h-8 w-8 text-gray-400 dark:text-gray-600";
 
@@ -74,38 +73,36 @@ const TechIcon = ({ type }) => {
           <span>React</span>
         </div>
       );
-    case "vue":
-      return (
-        <div className="flex items-center text-white gap-2">
-          <svg className={iconClasses} viewBox="0 0 24 24" fill="white">
-            <path d="M24 1.61h-9.94L12 5.16 9.94 1.61H0l12 20.78L24 1.61zM12 14.08L5.16 2.23h4.43L12 6.41l2.41-4.18h4.43L12 14.08z" />
-          </svg>
-          <span>Vue</span>
-        </div>
-      );
     default:
       return null;
   }
 };
-
-const SearchBar = () => (
+const SearchBar = ({ searchTerm, setSearchTerm }) => (
   <div className="relative max-w-2xl mx-auto mt-8">
     <div className="relative">
       <input
         type="text"
         placeholder="Search components..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
         className="w-full px-4 py-3 rounded-lg bg-black border border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
       />
       <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
         <kbd className="hidden sm:inline-block px-2 py-1 text-xs font-semibold bg-gray-900 rounded">
-          ⌘K
+          Search
         </kbd>
       </div>
     </div>
   </div>
 );
 
-const ComponentCard = ({ title, description, imageUrl, count, onClick }) => (
+const ComponentCard = ({
+  title = "Untitled",
+  description = "",
+  imageUrl,
+  count = 0,
+  onClick,
+}) => (
   <div
     onClick={onClick}
     className="group relative bg-black rounded-lg overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-200 cursor-pointer"
@@ -128,6 +125,7 @@ const ComponentCard = ({ title, description, imageUrl, count, onClick }) => (
 
 const ComponentsPage = () => {
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const sections = [
     {
@@ -179,6 +177,11 @@ const ComponentsPage = () => {
       path: "header-sections",
     },
   ];
+  const filteredSections = sections.filter(
+    (section) =>
+      section.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      section.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <>
@@ -226,7 +229,7 @@ const ComponentsPage = () => {
           </div>
         </div>
 
-        <SearchBar />
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
         {/* Main Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -242,7 +245,7 @@ const ComponentsPage = () => {
 
           {/* Components Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sections.map((section, index) => (
+            {filteredSections.map((section, index) => (
               <ComponentCard
                 key={index}
                 title={section.title}

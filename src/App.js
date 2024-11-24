@@ -20,7 +20,9 @@ import ContactPage from "./components/ContactPage";
 import LoginPage from "./components/LoginPage.jsx";
 import AdminPage from "./components/AdminPage";
 import { auth, provider } from "./components/firebase";
-import HeroHome from "./hero-section/herohome";
+import HeroHome from "./hero-section/hero";
+import Price from "./price/price";
+import Test from "./test";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole = "user" }) => {
@@ -94,6 +96,14 @@ const App = () => {
           }
         />
         <Route
+          path="/pricing-sections"
+          element={
+            <ProtectedRoute>
+              <Price />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/hero-sections"
           element={
             <ProtectedRoute>
@@ -115,6 +125,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </BrowserRouter>
   );

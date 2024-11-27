@@ -136,30 +136,30 @@ const ComponentsPage = () => {
         "https://cdn.dribbble.com/userupload/14447069/file/original-ca79afa0fc5aef918e5f269b28d43fc9.png?resize=1600x1200&vertical=center",
       path: "hero-sections",
     },
-    {
-      title: "Feature Sections",
-      description: "Showcase your product features",
-      count: 20,
-      imageUrl:
-        "https://cdn.dribbble.com/userupload/14216871/file/original-13e963abfb7152f14c2c0f161f80c085.png?resize=1600x1200&vertical=center",
-      path: "feature-sections",
-    },
-    {
-      title: "CTA Sections",
-      description: "Drive user actions",
-      count: 11,
-      imageUrl:
-        "https://cdn.dribbble.com/userupload/13895926/file/original-86b412c167258bbc413a260e445c4b3f.png?resize=2048x1536&vertical=center",
-      path: "cta-sections",
-    },
-    {
-      title: "Bento Grids",
-      description: "Modern layout components",
-      count: 3,
-      imageUrl:
-        "https://cdn.dribbble.com/userupload/13003057/file/original-d2f128d3b96af501bc2afa59112347f9.jpg?resize=2048x1536&vertical=center",
-      path: "bento-grids",
-    },
+    // {
+    //   title: "Feature Sections",
+    //   description: "Showcase your product features",
+    //   count: 20,
+    //   imageUrl:
+    //     "https://cdn.dribbble.com/userupload/14216871/file/original-13e963abfb7152f14c2c0f161f80c085.png?resize=1600x1200&vertical=center",
+    //   path: "feature-sections",
+    // },
+    // {
+    //   title: "CTA Sections",
+    //   description: "Drive user actions",
+    //   count: 11,
+    //   imageUrl:
+    //     "https://cdn.dribbble.com/userupload/13895926/file/original-86b412c167258bbc413a260e445c4b3f.png?resize=2048x1536&vertical=center",
+    //   path: "cta-sections",
+    // },
+    // {
+    //   title: "Bento Grids",
+    //   description: "Modern layout components",
+    //   count: 3,
+    //   imageUrl:
+    //     "https://cdn.dribbble.com/userupload/13003057/file/original-d2f128d3b96af501bc2afa59112347f9.jpg?resize=2048x1536&vertical=center",
+    //   path: "bento-grids",
+    // },
     {
       title: "Pricing Sections",
       description: "Display your pricing plans",
@@ -168,14 +168,14 @@ const ComponentsPage = () => {
         "https://cdn.dribbble.com/userupload/14407251/file/original-750c71d92fde86022df4033e0c22294e.jpg?resize=2048x1536&vertical=center",
       path: "pricing-sections",
     },
-    {
-      title: "Header Sections",
-      description: "Navigation and branding",
-      count: 10,
-      imageUrl:
-        "https://cdn.dribbble.com/userupload/15936352/file/original-6735a5397fc20689b40ee862aedc00f7.png?resize=2048x1536&vertical=center",
-      path: "header-sections",
-    },
+    // {
+    //   title: "Header Sections",
+    //   description: "Navigation and branding",
+    //   count: 10,
+    //   imageUrl:
+    //     "https://cdn.dribbble.com/userupload/15936352/file/original-6735a5397fc20689b40ee862aedc00f7.png?resize=2048x1536&vertical=center",
+    //   path: "header-sections",
+    // },
   ];
   const filteredSections = sections.filter(
     (section) =>

@@ -307,7 +307,7 @@ export default Test;
       className="bg-gray-900 text-gray-300 p-6 rounded-lg pt-20 relative"
     >
       <div className="flex justify-between items-center mb-4">
-        <span className="text-sm">HeroSection.jsx</span>
+        <span className="text-sm">Pricetemplate.jsx</span>
         <button
           onClick={handleCopy}
           className="p-2 hover:bg-gray-800 rounded transition-colors flex items-center gap-2"

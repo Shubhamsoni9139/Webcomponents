@@ -23,6 +23,7 @@ import { auth, provider } from "./components/firebase";
 import HeroHome from "./hero-section/hero";
 import Price from "./price/price";
 import Test from "./test";
+import Grids from "./bento-grids/grids";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole = "user" }) => {
@@ -87,30 +88,10 @@ const App = () => {
       <Navigation user={user} onSignOut={handleSignOut} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route
-          path="/components"
-          element={
-            <ProtectedRoute>
-              <ComponentsPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/pricing-sections"
-          element={
-            <ProtectedRoute>
-              <Price />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/hero-sections"
-          element={
-            <ProtectedRoute>
-              <HeroHome />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/components" element={<ComponentsPage />} />
+        <Route path="/pricing-sections" element={<Price />} />
+        <Route path="/bento-grids" element={<Grids />} />
+        <Route path="/hero-sections" element={<HeroHome />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route
@@ -126,6 +107,7 @@ const App = () => {
           }
         />
         <Route path="/test" element={<Test />} />
+        <Route path="*" element={<Navigate to="/components" />} />
       </Routes>
     </BrowserRouter>
   );

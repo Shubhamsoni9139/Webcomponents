@@ -1,129 +1,124 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const Test = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  // Sample data array - can be any length
-  const users = [
-    {
-      id: 1,
-      name: "James Wilson",
-      role: "Software Engineer",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
-    },
-    {
-      id: 2,
-      name: "Michael Brooks",
-      role: "Product Manager",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
-    },
-    {
-      id: 3,
-      name: "Robert Chen",
-      role: "UX Designer",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
-    },
-    {
-      id: 4,
-      name: "Emily Parker",
-      role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
-    },
-    {
-      id: 5,
-      name: "Emily Parker",
-      role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
-    },
-    {
-      id: 6,
-      name: "Emily Parker",
-      role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
-    },
-    {
-      id: 7,
-      name: "Emily Parker",
-      role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
-    },
-    // Add more users as needed
+  const keyboardLayout = [
+    [
+      "Esc",
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F8",
+      "F9",
+      "F10",
+      "F11",
+      "F12",
+    ],
+    [
+      "`",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "0",
+      "-",
+      "=",
+      "Backspace",
+    ],
+    ["Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]", "\\"],
+    ["Caps", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "Enter"],
+    ["Shift", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "Shift"],
+    ["Ctrl", "Win", "Alt", "Space", "Alt", "Fn", "Ctrl"],
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % users.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [users.length]);
-
-  // Calculate grid columns based on number of items
-  const getGridCols = (count) => {
-    if (count <= 1) return 1;
-    if (count <= 4) return 2;
-    if (count <= 9) return 3;
-    return 4; // Max 4 columns for larger sets
+  const getKeyWidth = (key) => {
+    switch (key) {
+      case "Backspace":
+        return "w-24";
+      case "Tab":
+      case "Caps":
+      case "\\":
+        return "w-20";
+      case "Shift":
+        return "w-28";
+      case "Enter":
+        return "w-24";
+      case "Space":
+        return "w-64";
+      case "Ctrl":
+      case "Alt":
+      case "Win":
+      case "Fn":
+        return "w-16";
+      default:
+        return "w-12";
+    }
   };
 
-  const gridCols = getGridCols(users.length);
-
   return (
-    <div className="w-full max-w-6xl mx-auto p-4">
-      <div
-        className="relative grid gap-2"
-        style={{
-          gridTemplateColumns: `repeat(${gridCols}, 1fr)`,
-          aspectRatio: "1/1",
-        }}
-      >
-        {users.map((user, index) => (
-          <div key={user.id} className="relative overflow-hidden bg-gray-900">
-            {/* Image Container */}
-            <div className="absolute inset-0">
-              <img
-                src={user.image}
-                alt={user.name}
-                className={`w-full h-full object-cover transition-all duration-500 ${
-                  activeIndex === index ? "grayscale-0 scale-105" : "grayscale"
-                }`}
-              />
-            </div>
-
-            {/* Overlay with user info */}
-            <div
-              className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent
-                transition-opacity duration-500 flex flex-col justify-end p-4
-                ${activeIndex === index ? "opacity-100" : "opacity-0"}`}
-            >
-              <h3 className="text-white font-semibold text-lg">{user.name}</h3>
-              <p className="text-white/80 text-sm">{user.role}</p>
-            </div>
-
-            {/* Selection Frame */}
-            {activeIndex === index && (
-              <div className="absolute inset-0 z-10">
-                {/* Animated corners */}
-                <div className="absolute top-0 left-0 w-[20%] h-[20%] border-t-4 border-l-4 border-blue-500" />
-                <div className="absolute top-0 right-0 w-[20%] h-[20%] border-t-4 border-r-4 border-blue-500" />
-                <div className="absolute bottom-0 left-0 w-[20%] h-[20%] border-b-4 border-l-4 border-blue-500" />
-                <div className="absolute bottom-0 right-0 w-[20%] h-[20%] border-b-4 border-r-4 border-blue-500" />
-
-                {/* Counter badge */}
-                <div className="absolute top-2 right-2 bg-blue-500 text-white text-sm px-2 py-1 rounded-full">
-                  {activeIndex + 1}/{users.length}
-                </div>
+    <div className="p-8 bg-gray-900 rounded-xl shadow-2xl perspective-1000">
+      <div className="flex flex-col gap-1">
+        {keyboardLayout.map((row, rowIndex) => (
+          <div key={rowIndex} className="flex gap-1 justify-center">
+            {row.map((key, keyIndex) => (
+              <div
+                key={`${rowIndex}-${keyIndex}`}
+                className={`
+                  ${getKeyWidth(key)}
+                  h-12
+                  flex
+                  items-center
+                  justify-center
+                  bg-gray-800
+                  text-gray-300
+                  rounded-lg
+                  font-medium
+                  relative
+                  group
+                  cursor-pointer
+                  transition-transform
+                  duration-150
+                  transform
+                  hover:-translate-y-1
+                  active:translate-y-0
+                  before:content-['']
+                  before:absolute
+                  before:inset-0
+                  before:bg-gradient-to-b
+                  before:from-gray-700/50
+                  before:to-transparent
+                  before:rounded-lg
+                  after:content-['']
+                  after:absolute
+                  after:inset-0
+                  after:bg-gradient-to-t
+                  after:from-black/50
+                  after:to-transparent
+                  after:rounded-lg
+                  after:opacity-0
+                  after:group-hover:opacity-100
+                  after:transition-opacity
+                  border-t
+                  border-gray-600/30
+                  shadow-[inset_0_-2px_0_0_#1a1a1a,0_1px_2px_1px_rgba(0,0,0,0.9)]
+                `}
+              >
+                <span className="relative z-10">{key}</span>
+                {/* Side of the key - 3D effect */}
+                <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gray-900 rounded-b-lg transform skew-x-12"></div>
+                <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gray-900 rounded-b-lg transform -skew-x-12"></div>
               </div>
-            )}
+            ))}
           </div>
         ))}
-      </div>
-
-      {/* Progress bar */}
-      <div className="mt-4 h-1 bg-gray-200 rounded-full overflow-hidden">
-        <div
-          className="h-full bg-blue-500 transition-all duration-500"
-          style={{ width: `${((activeIndex + 1) / users.length) * 100}%` }}
-        />
       </div>
     </div>
   );

@@ -66,7 +66,7 @@ const TestimonialsGrid = () => {
       author: "Sanjay Kapoor",
       username: "sanjay_ux_design",
       content:
-        "I just discovered ui.aceternity.com today, and my mind was blown 🤯! The seamless blend of framer-motion, tailwind CSS, and shacdn is a UI masterpiece. Big props to @mannupaaji for creating such an inspirational resource for developers. #UI #nextjs",
+        "I just discovered WebComponents today, and my mind was blown 🤯! The seamless blend of framer-motion, tailwind CSS, and shacdn is a UI masterpiece.",
       verified: true,
     },
     {

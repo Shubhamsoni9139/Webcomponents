@@ -15,15 +15,15 @@ import {
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import ComponentsPage from "./components/ComponentsPage";
-import AboutPage from "./components/AboutPage";
-import ContactPage from "./components/ContactPage";
+
 import LoginPage from "./components/LoginPage.jsx";
-import AdminPage from "./components/AdminPage";
+
 import { auth, provider } from "./components/firebase";
 import HeroHome from "./hero-section/hero";
 import Price from "./price/price";
 import Test from "./test";
 import Grids from "./bento-grids/grids";
+import Keyboards from "./keyboard/keyboards.jsx";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole = "user" }) => {
@@ -92,20 +92,13 @@ const App = () => {
         <Route path="/pricing-sections" element={<Price />} />
         <Route path="/bento-grids" element={<Grids />} />
         <Route path="/hero-sections" element={<HeroHome />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/KeyBoard" element={<Keyboards />} />
+
         <Route
           path="/login"
           element={<LoginPage onGoogleSignIn={handleGoogleSignIn} />}
         />
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute requiredRole="admin">
-              <AdminPage />
-            </ProtectedRoute>
-          }
-        />
+
         <Route path="/test" element={<Test />} />
         <Route path="*" element={<Navigate to="/components" />} />
       </Routes>

@@ -22,43 +22,29 @@ const PreviewSection = () => {
       id: 1,
       name: "James Wilson",
       role: "Software Engineer",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+      image:
+        "https://bobmeijer.nl/wp-content/uploads/2022/09/bobmeijernl-foto-6-1.png",
     },
     {
       id: 2,
       name: "Michael Brooks",
       role: "Product Manager",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+      image:
+        "https://bobmeijer.nl/wp-content/uploads/2022/09/bobmeijernl-foto-6-1.png",
     },
     {
       id: 3,
       name: "Robert Chen",
       role: "UX Designer",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+      image:
+        "https://bobmeijer.nl/wp-content/uploads/2022/09/bobmeijernl-foto-6-1.png",
     },
     {
       id: 4,
       name: "Emily Parker",
       role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
-    },
-    {
-      id: 5,
-      name: "Emily Parker",
-      role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
-    },
-    {
-      id: 6,
-      name: "Emily Parker",
-      role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
-    },
-    {
-      id: 7,
-      name: "Emily Parker",
-      role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+      image:
+        "https://bobmeijer.nl/wp-content/uploads/2022/09/bobmeijernl-foto-6-1.png",
     },
     // Add more users as needed
   ];
@@ -80,7 +66,7 @@ const PreviewSection = () => {
 
   const gridCols = getGridCols(users.length);
   return (
-    <div className="w-full max-w-6xl mx-auto p-4  bg-black">
+    <div className="w-full max-w-2xl mx-auto p-4  bg-black">
       <div
         className="relative grid gap-2"
         style={{
@@ -157,43 +143,43 @@ const Test = () => {
       id: 1,
       name: "James Wilson",
       role: "Software Engineer",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+      image: "https://bobmeijer.nl/wp-content/uploads/2022/09/bobmeijernl-foto-6-1.png",
     },
     {
       id: 2,
       name: "Michael Brooks",
       role: "Product Manager",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+      image: "https://bobmeijer.nl/wp-content/uploads/2022/09/bobmeijernl-foto-6-1.png",
     },
     {
       id: 3,
       name: "Robert Chen",
       role: "UX Designer",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+      image: "https://bobmeijer.nl/wp-content/uploads/2022/09/bobmeijernl-foto-6-1.png",
     },
     {
       id: 4,
       name: "Emily Parker",
       role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+      image: "https://bobmeijer.nl/wp-content/uploads/2022/09/bobmeijernl-foto-6-1.png",
     },
     {
       id: 5,
       name: "Emily Parker",
       role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+      image: "https://bobmeijer.nl/wp-content/uploads/2022/09/bobmeijernl-foto-6-1.png",
     },
     {
       id: 6,
       name: "Emily Parker",
       role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+      image: "https://bobmeijer.nl/wp-content/uploads/2022/09/bobmeijernl-foto-6-1.png",
     },
     {
       id: 7,
       name: "Emily Parker",
       role: "Marketing Lead",
-      image: "https://assets.aceternity.com/pro/headshots/headshot-1.png",
+      image: "https://bobmeijer.nl/wp-content/uploads/2022/09/bobmeijernl-foto-6-1.png",
     },
     // Add more users as needed
   ];

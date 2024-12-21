@@ -83,12 +83,6 @@ const Navigation = () => {
             <NavLink href="/components" icon={Code}>
               Components
             </NavLink>
-            <NavLink href="/about" icon={Info}>
-              About
-            </NavLink>
-            <NavLink href="/contact" icon={Phone}>
-              Contact
-            </NavLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -119,16 +113,6 @@ const Navigation = () => {
               onClick={() => setIsOpen(false)}
             >
               Components
-            </NavLink>
-            <NavLink href="/about" icon={Info} onClick={() => setIsOpen(false)}>
-              About
-            </NavLink>
-            <NavLink
-              href="/contact"
-              icon={Phone}
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
             </NavLink>
           </div>
         </div>

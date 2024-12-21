@@ -152,14 +152,6 @@ const ComponentsPage = () => {
     //     "https://cdn.dribbble.com/userupload/13895926/file/original-86b412c167258bbc413a260e445c4b3f.png?resize=2048x1536&vertical=center",
     //   path: "cta-sections",
     // },
-    // {
-    //   title: "Bento Grids",
-    //   description: "Modern layout components",
-    //   count: 3,
-    //   imageUrl:
-    //     "https://cdn.dribbble.com/userupload/13003057/file/original-d2f128d3b96af501bc2afa59112347f9.jpg?resize=2048x1536&vertical=center",
-    //   path: "bento-grids",
-    // },
     {
       title: "Pricing Sections",
       description: "Display your pricing plans",
@@ -176,6 +168,22 @@ const ComponentsPage = () => {
     //     "https://cdn.dribbble.com/userupload/15936352/file/original-6735a5397fc20689b40ee862aedc00f7.png?resize=2048x1536&vertical=center",
     //   path: "header-sections",
     // },
+    {
+      title: "KeyBoard",
+      description: "Create stunning products",
+      count: 12,
+      imageUrl:
+        "https://cdn.dribbble.com/userupload/14447069/file/original-ca79afa0fc5aef918e5f269b28d43fc9.png?resize=1600x1200&vertical=center",
+      path: "KeyBoard",
+    },
+    {
+      title: "Bento Grids",
+      description: "Display your pricing plans",
+      count: 14,
+      imageUrl:
+        "https://cdn.dribbble.com/userupload/10227101/file/original-c91250365db2d1325e1ab7fa1c814695.png",
+      path: "bento-grids",
+    },
   ];
   const filteredSections = sections.filter(
     (section) =>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ChevronRight, Code, Package, Zap, Shield, Star } from "lucide-react";
 import TestimonialsGrid from "./TestimonialsGrid";
 import HeroSection from "./HeroSection";
-
+import { Link } from "react-router-dom";
 // Animated Falling Balls Component
 const FallingBalls = () => {
   return (
@@ -162,12 +162,17 @@ const LandingPage = () => {
             Build beautiful websites faster with our pre-built components
           </p>
           <div className="flex justify-center gap-4">
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 backdrop-blur-sm">
-              Browse Components <ChevronRight className="w-4 h-4" />
-            </button>
-            <button className="backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-lg font-medium transition-all duration-200">
-              View Demo
-            </button>
+            <Link to="/components">
+              <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 backdrop-blur-sm">
+                Browse Components <ChevronRight className="w-4 h-4" />
+              </button>
+            </Link>
+
+            <Link to="/components">
+              <button className="backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/10 px-6 py-3 rounded-lg font-medium transition-all duration-200">
+                View Demo
+              </button>
+            </Link>
           </div>
         </div>
       </div>

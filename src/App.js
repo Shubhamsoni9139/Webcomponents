@@ -24,6 +24,7 @@ import Price from "./price/price";
 import Test from "./test";
 import Grids from "./bento-grids/grids";
 import Keyboards from "./keyboard/keyboards.jsx";
+import Testimonials from "./testimonials/testimonials.jsx";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole = "user" }) => {
@@ -93,6 +94,7 @@ const App = () => {
         <Route path="/bento-grids" element={<Grids />} />
         <Route path="/hero-sections" element={<HeroHome />} />
         <Route path="/KeyBoard" element={<Keyboards />} />
+        <Route path="/testimonials" element={<Testimonials />} />
 
         <Route
           path="/login"

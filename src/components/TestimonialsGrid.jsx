@@ -47,47 +47,47 @@ const TestimonialsGrid = () => {
   const testimonials = [
     {
       title: "Workflow Revolutionized",
-      author: "Alex Johnson",
-      username: "alex_dev_works",
+      author: "Aarav Gupta",
+      username: "aarav_dev_pro",
       content:
         "WebComponents has completely transformed my workflow! The features are intuitive and incredibly powerful. 👊",
       verified: true,
     },
     {
       title: "Game-Changing Features",
-      author: "Priya Mehta",
-      username: "priya_techie",
+      author: "Sneha Reddy",
+      username: "sneha_tech_wiz",
       content:
         "Every time I return from a break, I find that WebComponents has added new, game-changing features. Truly a hub for innovation! ✨🔥",
       verified: false,
     },
     {
       title: "UI Masterpiece",
-      author: "Sanjay Kapoor",
-      username: "sanjay_ux_design",
+      author: "Kabir Mehta",
+      username: "kabir_ux_creator",
       content:
         "I just discovered WebComponents today, and my mind was blown 🤯! The seamless blend of framer-motion, tailwind CSS, and shacdn is a UI masterpiece.",
       verified: true,
     },
     {
       title: "Portfolio Enhancement",
-      author: "Rhea Sharma",
-      username: "rhea_tech_creator",
+      author: "Ishita Sharma",
+      username: "ishita_design_hub",
       content:
         "I integrated WebComponents into my portfolio, and the design elements are top-notch. Highly recommend it to every developer looking to elevate their UI! 💻✨",
       verified: true,
     },
     {
       title: "Next-Level Innovation",
-      author: "Daniel Cruz",
-      username: "daniel_innovator",
+      author: "Rohan Verma",
+      username: "rohan_innovates",
       content: "WebComponents is next level! 🚀",
       verified: true,
     },
     {
       title: "Sleek & Functional",
-      author: "Omar Al-Fayed",
-      username: "omar_dev_mind",
+      author: "Zara Khan",
+      username: "zara_dev_creative",
       content:
         "The new updates from WebComponents are just amazing. Looks incredibly sleek and functional 👌",
       verified: false,

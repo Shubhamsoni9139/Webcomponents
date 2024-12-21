@@ -136,6 +136,14 @@ const ComponentsPage = () => {
         "https://cdn.dribbble.com/userupload/14447069/file/original-ca79afa0fc5aef918e5f269b28d43fc9.png?resize=1600x1200&vertical=center",
       path: "hero-sections",
     },
+    {
+      title: "Testimonials",
+      description: "Showcase your product reviews",
+      count: 2,
+      imageUrl:
+        "https://cdn.dribbble.com/userupload/13707945/file/original-67afb478391d0d7714ce0f397009512c.png",
+      path: "testimonials",
+    },
     // {
     //   title: "Feature Sections",
     //   description: "Showcase your product features",

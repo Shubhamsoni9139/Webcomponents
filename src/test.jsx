@@ -1,196 +1,94 @@
-import React from "react";
-import { LineChart, Line, YAxis } from "recharts";
+import React, { useState, useEffect } from "react";
 
-const data = [
-  { value: 30000 },
-  { value: 30000 },
-  { value: 35000 },
-  { value: 38000 },
-  { value: 45000 },
-  { value: 42000 },
-  { value: 50000 },
+const testimonials = [
+  {
+    quote:
+      "Actions is an exciting development and unlocks so much potential beyond CI/CD. It promises to streamline our workflows for a variety of tasks, from deploying our websites to querying the GitHub API for custom status reports to standard CI builds.",
+    author: "Ralf Gommers",
+    role: "SciPy Maintainer",
+  },
+  {
+    quote:
+      "GitHub Actions has revolutionized our deployment process. The integration capabilities and workflow automation have significantly reduced our development cycle time.",
+    author: "Sarah Chen",
+    role: "DevOps Engineer",
+  },
+  {
+    quote:
+      "The flexibility of Actions allows us to create custom workflows that perfectly match our needs. It's been a game-changer for our continuous deployment strategy.",
+    author: "Marcus Peterson",
+    role: "Lead Developer",
+  },
 ];
 
-const test = () => {
+const Test = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+        setIsTransitioning(false);
+      }, 200);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#0F0F1A] p-8 relative overflow-hidden">
-      {/* Background Gradient Effects */}
-      <div className="absolute top-10 left-20 w-96 h-96 bg-purple-600/30 rounded-full blur-[128px]" />
-      <div className="absolute bottom-10 right-20 w-96 h-96 bg-blue-600/30 rounded-full blur-[128px]" />
+    <div className="min-h-screen bg-[#0D1117] p-8 relative overflow-hidden">
+      {/* Gradient Elements */}
+      <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] bg-[#3CDE8C]/20 rounded-full filter blur-[100px]"></div>
+      <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-[#6366F1]/20 rounded-full filter blur-[100px]"></div>
+      <div className="absolute bottom-[-10%] left-[10%] w-[400px] h-[400px] bg-[#F6E05E]/10 rounded-full filter blur-[100px]"></div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-        {/* Analytics Card */}
-        <div className="group p-8 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="p-2 rounded-lg bg-black/30">
-              <svg
-                className="w-5 h-5 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                />
-              </svg>
-            </div>
-            <span className="text-gray-400">Advanced analytics data</span>
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mb-8">
-            Access powerful data to help you boost your business
-          </h2>
-
-          <div className="bg-black/30 rounded-2xl p-6">
-            <div className="flex items-baseline gap-3 mb-6">
-              <span className="text-3xl font-bold text-white">$68,900</span>
-              <span className="text-sm px-2 py-1 bg-green-500/20 text-green-400 rounded-full">
-                +25%
+      {/* Main Content Container */}
+      <div className="max-w-[1200px] mx-auto">
+        <div className="relative max-w-[800px] mx-auto mt-12">
+          {/* Card */}
+          <div className="rounded-[20px] bg-gray-800/30 backdrop-blur-xl border border-gray-700/50 p-12">
+            {/* Quote Mark */}
+            <div className="mb-6">
+              <span className="text-[#3CDE8C] text-6xl font-serif leading-none">
+                <svg
+                  className="w-8 h-8 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
               </span>
             </div>
-            <LineChart width={400} height={100} data={data}>
-              <Line
-                type="monotone"
-                dataKey="value"
-                stroke="#f97316"
-                strokeWidth={2}
-                dot={false}
-              />
-              <YAxis hide={true} />
-            </LineChart>
-          </div>
-        </div>
 
-        {/* Support Card */}
-        <div className="group p-8 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="p-2 rounded-lg bg-black/30">
-              <svg
-                className="w-5 h-5 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 18v-6a9 9 0 0118 0v6a3 3 0 01-3 3h-12a3 3 0 01-3-3z"
-                />
-              </svg>
-            </div>
-            <span className="text-gray-400">Fantastic support</span>
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mb-8">
-            24/7 fast chat support
-          </h2>
-
-          <div className="bg-black/30 rounded-2xl p-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gray-600">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
-                  alt="Support Avatar"
-                  className="w-full h-full object-cover rounded-full"
-                />
+            {/* Quote Content */}
+            <div
+              className={`transition-opacity duration-200 ${
+                isTransitioning ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              <div className="space-y-4">
+                <p className="text-white text-[28px] font-medium leading-tight">
+                  {testimonials[currentIndex].quote.split(".")[0]}.
+                </p>
+                <p className="text-gray-400 text-xl leading-relaxed">
+                  {testimonials[currentIndex].quote
+                    .split(".")
+                    .slice(1)
+                    .join(".")
+                    .trim()}
+                </p>
               </div>
-              <div className="bg-white/10 rounded-2xl p-3">
-                <p className="text-white">Hey there! I'm here to help. 👋</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Integrations Card */}
-        <div className="group p-8 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="p-2 rounded-lg bg-black/30">
-              <svg
-                className="w-5 h-5 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </div>
-            <span className="text-gray-400">Awesome integrations</span>
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mb-8">
-            Works with your favorite tools
-          </h2>
-
-          <div className="flex gap-4">
-            {[
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoUX5LMRa7atIsNfl0nP3DaUaV4URhV0PHfA&s",
-              "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png?20200221181224",
-              "https://www.logo.wine/a/logo/Google_Drive/Google_Drive-Logo.wine.svg",
-            ].map((imageSrc, index) => (
-              <div
-                key={index}
-                className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-black/30"
-              >
-                <img
-                  src={imageSrc}
-                  alt={`Image ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Newsletter Card */}
-        <div className="group p-8 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="p-2 rounded-lg bg-black/30">
-              <svg
-                className="w-5 h-5 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <span className="text-gray-400">Customize newsletters</span>
-          </div>
-
-          <h2 className="text-2xl font-bold text-white mb-8">
-            We made it simple to create stunning newsletters
-          </h2>
-
-          <div className="space-y-4">
-            <div className="flex gap-2 items-center">
-              <span className="text-gray-400 text-sm">To:</span>
-              <button className="bg-black/30 text-white px-3 py-1 rounded-lg text-sm">
-                All Contacts ▾
-              </button>
-            </div>
-            <div className="flex gap-2 items-center">
-              <span className="text-gray-400 text-sm">Subject:</span>
-              <span className="text-white text-sm">
-                Exciting updates are on the way!
-              </span>
-            </div>
-            <div className="bg-black/30 p-4 rounded-xl">
-              <div className="text-orange-500 inline-block px-3 py-1 text-sm rounded-lg border border-orange-500/30">
-                Monthly updates
+              {/* Author Info */}
+              <div className="mt-8">
+                <h3 className="text-white font-medium">
+                  {testimonials[currentIndex].author}
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  {testimonials[currentIndex].role}
+                </p>
               </div>
             </div>
           </div>
@@ -200,4 +98,4 @@ const test = () => {
   );
 };
 
-export default test;
+export default Test;

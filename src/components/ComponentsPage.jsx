@@ -181,7 +181,7 @@ const ComponentsPage = () => {
       description: "Create stunning products",
       count: 12,
       imageUrl:
-        "https://cdn.dribbble.com/userupload/14447069/file/original-ca79afa0fc5aef918e5f269b28d43fc9.png?resize=1600x1200&vertical=center",
+        "https://cdn.dribbble.com/userupload/7691407/file/original-506ded33be53aa87ff822b5bc3d88db7.png?resize=752x&vertical=center",
       path: "KeyBoard",
     },
     {

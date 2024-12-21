@@ -1,7 +1,5 @@
 // First, install these dependencies:
 // npm install react-router-dom firebase @/components/ui/button @/components/ui/alert
-
-// App.jsx
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { initializeApp } from "firebase/app";
@@ -11,6 +9,9 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
 } from "firebase/auth";
+
+// Vercel Analytics import
+import { Analytics } from "@vercel/analytics/react";
 
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
@@ -86,6 +87,9 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      {/* Vercel Analytics Component */}
+      <Analytics />
+
       <Navigation user={user} onSignOut={handleSignOut} />
       <Routes>
         <Route path="/" element={<LandingPage />} />

@@ -94,10 +94,9 @@ const PreviewSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            WebComponents AI brings you the best productivity tools for your
-            desktop, now available on mobile. Download the app now to avail
-            additional 20% discount and take your productivity to the next
-            level.
+            Breakui AI brings you the best productivity tools for your desktop,
+            now available on mobile. Download the app now to avail additional
+            20% discount and take your productivity to the next level.
           </motion.p>
 
           <motion.div

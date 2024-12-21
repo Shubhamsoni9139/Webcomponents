@@ -36,9 +36,7 @@ const PreviewSection = () => {
                     whileHover={{ scale: 1.05 }}
                     className="w-8 h-8 bg-indigo-600 rounded"
                   />
-                  <span className="text-black ml-5 font-semibold">
-                    WebComponents
-                  </span>
+                  <span className="text-black ml-5 font-semibold">Breakui</span>
                 </a>
               </div>
 

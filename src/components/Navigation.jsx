@@ -70,9 +70,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <Package className="w-6 h-6 text-cyan-500" />
-            <span className="text-xl font-semibold text-white">
-              WebComponents
-            </span>
+            <span className="text-xl font-semibold text-white">Breakui</span>
           </Link>
 
           {/* Desktop Navigation */}

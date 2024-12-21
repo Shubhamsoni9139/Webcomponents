@@ -212,7 +212,7 @@ const ComponentsPage = () => {
             <div className="text-center space-y-8">
               <div className="space-y-4">
                 <p className="text-white font-medium">
-                  By the makers of WebComponents
+                  By the makers of Breakui
                 </p>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white">
                   Beautiful UI components,

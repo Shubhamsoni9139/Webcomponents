@@ -50,7 +50,7 @@ const TestimonialsGrid = () => {
       author: "Aarav Gupta",
       username: "aarav_dev_pro",
       content:
-        "WebComponents has completely transformed my workflow! The features are intuitive and incredibly powerful. 👊",
+        "Breakui has completely transformed my workflow! The features are intuitive and incredibly powerful. 👊",
       verified: true,
     },
     {
@@ -58,7 +58,7 @@ const TestimonialsGrid = () => {
       author: "Sneha Reddy",
       username: "sneha_tech_wiz",
       content:
-        "Every time I return from a break, I find that WebComponents has added new, game-changing features. Truly a hub for innovation! ✨🔥",
+        "Every time I return from a break, I find that Breakui has added new, game-changing features. Truly a hub for innovation! ✨🔥",
       verified: false,
     },
     {
@@ -66,7 +66,7 @@ const TestimonialsGrid = () => {
       author: "Kabir Mehta",
       username: "kabir_ux_creator",
       content:
-        "I just discovered WebComponents today, and my mind was blown 🤯! The seamless blend of framer-motion, tailwind CSS, and shacdn is a UI masterpiece.",
+        "I just discovered Breakui today, and my mind was blown 🤯! The seamless blend of framer-motion, tailwind CSS, and shacdn is a UI masterpiece.",
       verified: true,
     },
     {
@@ -74,14 +74,14 @@ const TestimonialsGrid = () => {
       author: "Ishita Sharma",
       username: "ishita_design_hub",
       content:
-        "I integrated WebComponents into my portfolio, and the design elements are top-notch. Highly recommend it to every developer looking to elevate their UI! 💻✨",
+        "I integrated Breakui into my portfolio, and the design elements are top-notch. Highly recommend it to every developer looking to elevate their UI! 💻✨",
       verified: true,
     },
     {
       title: "Next-Level Innovation",
       author: "Rohan Verma",
       username: "rohan_innovates",
-      content: "WebComponents is next level! 🚀",
+      content: "Breakui is next level! 🚀",
       verified: true,
     },
     {
@@ -89,7 +89,7 @@ const TestimonialsGrid = () => {
       author: "Zara Khan",
       username: "zara_dev_creative",
       content:
-        "The new updates from WebComponents are just amazing. Looks incredibly sleek and functional 👌",
+        "The new updates from Breakui are just amazing. Looks incredibly sleek and functional 👌",
       verified: false,
     },
   ];

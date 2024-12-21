@@ -92,7 +92,7 @@ const PreviewSection = () => {
         <nav className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-blue-600 rounded-lg"></div>
-            <span className="font-semibold text-black">WebComponents</span>
+            <span className="font-semibold text-black">Breakui</span>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -121,16 +121,16 @@ const PreviewSection = () => {
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <h1 className="text-5xl font-bold text-gray-900 leading-tight">
-              Meet the New WebComponents Kit
+              Meet the New Breakui Kit
             </h1>
             <p className="text-xl text-gray-600">
-              WebComponents gives you the blocks & components you need to create
-              a truly professional website, landing page or admin panel for your
+              Breakui gives you the blocks & components you need to create a
+              truly professional website, landing page or admin panel for your
               SaaS.
             </p>
             <div className="flex items-center gap-4">
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors">
-                Start using WebComponents
+                Start using Breakui
               </button>
               <button className="flex items-center gap-2 text-gray-600 hover:text-gray-900 px-6 py-3 rounded-lg transition-colors">
                 <Play size={20} />
